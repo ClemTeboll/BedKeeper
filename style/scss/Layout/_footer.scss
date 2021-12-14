@@ -1,0 +1,27 @@
+@use '../Utils/variables' as v;
+@use '../Utils/mixins' as m;
+
+footer {
+    margin-top: 20px;
+    background-color: v.$third-color;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include m.mobile-only {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    & p {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 2;
+        @include m.mobile-only {
+            width: 70%;
+            margin: auto;
+        }
+    }
+    a {
+        color: v.$black-color;
+    }
+}
