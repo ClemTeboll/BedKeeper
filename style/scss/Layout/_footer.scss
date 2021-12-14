@@ -1,0 +1,18 @@
+@use '../Utils/variables' as v;
+@use '../Utils/mixins' as m;
+
+footer {
+    margin-top: 20px;
+    background-color: v.$third-color;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & p {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 2;
+    }
+    a {
+        color: v.$black-color;
+    }
+}

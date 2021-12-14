@@ -1,5 +1,14 @@
+@use '../Utils/variables' as v;
+
 @mixin flex-row {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+@mixin section-and-aside {
+    width: 50%;
+    color: v.$second-color;
+    padding: 2%;
+    font-family: 'Open Sans', sans-serif;
 }

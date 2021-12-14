@@ -4,5 +4,7 @@
 main {
     @include m.flex-row;
     background-color: v.$first-color;
-    margin-top: 50px;
+    margin-top: 80px;
+    padding: 2%;
+    height: 500px;
 }
