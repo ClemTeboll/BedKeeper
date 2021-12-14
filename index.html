@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <img src="" alt="Logo de BedKeeper">
+        <img src="./assets/vecteur-d-ic-ne-de-double-lit-signe-plat-rempli-pictogramme-solide-d-isolement-sur-le-blanc-94546336.jpg" alt="Logo de BedKeeper">
         <h1>BedKeeper</h1>
         <p class="subtitle">Restez au lit les jours fériés</p>
     </header>
@@ -20,12 +20,19 @@
         <section>
             <h2>Quel jour voulez-vous vérifier ?</h2>
             <form method="post" action="./js/main.js">
-                
+                <div class="datetime-picker">
+                    <input type="date" name="calendar" placeholder="JJ/MM/AAAA" id="calendar-input" class="datetime-picker__input">
+                    <i class="far fa-calendar"></i>
+                </div>
             </form>
         </section>
-        <section>
-
-        </section>
+        <aside>
+            <p id="response-text"></p>
+        </aside>
     </main>
+    <footer>
+        <p>Mentions légales</p>
+        <p><a href="#">Contact</a></p>
+    </footer>
 </body>
 </html>
