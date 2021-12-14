@@ -1,0 +1,25 @@
+@use '../Utils/mixins' as m;
+@use '../Base/fonts';
+
+header {
+    height: 200px;
+    margin-bottom: 20px;
+    & div {
+        @include m.flex-row;
+        justify-content: center;
+        & img {
+            width: 200px;
+            height: auto;
+        }
+        & h1 {
+            font-size: 70px;
+            font-family: 'Bakbak One', cursive;
+        }
+    }
+    & p.subtitle {
+        text-align: center;
+        font-style: italic;
+        font-size: 20px;
+    }
+    
+}

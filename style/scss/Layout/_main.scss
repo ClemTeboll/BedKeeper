@@ -1,0 +1,8 @@
+@use '../Utils/variables' as v;
+@use '../Utils/mixins' as m;
+
+main {
+    @include m.flex-row;
+    background-color: v.$first-color;
+    margin-top: 50px;
+}
