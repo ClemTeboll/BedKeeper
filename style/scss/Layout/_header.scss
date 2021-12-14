@@ -1,18 +1,29 @@
+@use '../Utils/variables' as v;
 @use '../Utils/mixins' as m;
 
 header {
     height: 200px;
     margin-bottom: 20px;
+    @include m.mobile-only {
+        height: 100px;
+        margin-bottom: 0px;
+    }
     & div {
         @include m.flex-row;
         justify-content: center;
         & img {
             width: 200px;
             height: auto;
+            @include m.mobile-only {
+                width: 100px;
+            }
         }
         & h1 {
             font-size: 70px;
             font-family: 'Bakbak One', cursive;
+            @include m.mobile-only {
+                font-size: 50px;
+            }
         }
     }
     & p.subtitle {
@@ -20,6 +31,9 @@ header {
         font-style: italic;
         font-size: 30px;
         font-family: 'Open Sans', sans-serif;
+        @include m.mobile-only {
+            font-size: 20px;
+        }
     }
     
 }

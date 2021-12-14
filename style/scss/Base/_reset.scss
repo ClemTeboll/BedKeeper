@@ -1,3 +1,6 @@
+@use '../Utils/variables' as v;
+@use '../Utils/mixins' as m;
+
 a, abbr, acronym, address, applet, article, aside, audio,
 b, blockquote, big, body,
 center, canvas, caption, cite, code, command,
@@ -29,6 +32,10 @@ body {
     max-width: 1440px;
     width: 90%;
     margin: auto;
+    @include m.mobile-only {
+        width: 100%;
+        margin: none;
+    }
 }
 
 a {

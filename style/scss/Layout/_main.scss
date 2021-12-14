@@ -7,4 +7,10 @@ main {
     margin-top: 80px;
     padding: 2%;
     height: 500px;
+    @include m.mobile-only {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }

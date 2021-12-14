@@ -3,30 +3,49 @@
 
 section {
     @include m.section-and-aside;
+    @include m.mobile-only {
+        width: 100%;
+    }
     & h2 {
         font-size: 20px;
         margin-bottom: 20px;
+        text-align: center;
     }
-    & .datetime-picker {
-        border: 1px solid v.$second-color;
-        background-color: v.$second-color;
-        padding: 2%;
-        @include m.flex-row;
-        justify-content: space-between;
-        width: 200px;
-        &__input {
-            border: none;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 18px;
-            width: 100%;
-        }
-        & .fa-calendar {
-            color: v.$first-color;
-            font-size: 30px;
+    & form {
+        display: flex;
+        justify-content: center;
+        & .datetime-picker {
+            border: 1px solid v.$second-color;
+            background-color: v.$second-color;
+            padding: 2%;
+            @include m.flex-row;
+            justify-content: space-between;
+            width: 200px;
+            @include m.mobile-only {
+                width: 70%;
+            }
+            &__input {
+                border: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 18px;
+                width: 100%;
+            }
+            & .fa-calendar {
+                color: v.$first-color;
+                font-size: 30px;
+            }
         }
     }
 }
 
 aside {
     @include m.section-and-aside;
+    background-color: v.$second-color;
+    color: v.$black-color;
+    visibility: hidden;
+    @include m.mobile-only {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 70%;
+    }
 }

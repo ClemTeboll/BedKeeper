@@ -8,9 +8,18 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include m.mobile-only {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     & p {
         font-family: 'Open Sans', sans-serif;
         line-height: 2;
+        @include m.mobile-only {
+            width: 70%;
+            margin: auto;
+        }
     }
     a {
         color: v.$black-color;
