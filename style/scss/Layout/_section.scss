@@ -42,10 +42,15 @@ aside {
     @include m.section-and-aside;
     background-color: v.$second-color;
     color: v.$black-color;
-    visibility: hidden;
     @include m.mobile-only {
         margin-top: 20px;
         margin-bottom: 20px;
         width: 70%;
+    }
+    &.empty-response-text {
+        visibility: hidden;
+    }
+    &.filled-response-text {
+        visibility: visible;
     }
 }
