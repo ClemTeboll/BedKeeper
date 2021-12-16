@@ -32,10 +32,3 @@ inputDate.addEventListener("input", () => {
 
 })
 
-// Fonction click qui :
-
-// - Appelle l'API
-// - Compare la date demandé par l'utilisateur avec la date de l'api
-// - Si date = jour férié, return true, affiche le résultat true
-// - Si date = jour férié, return false, affiche le résultat false
-
