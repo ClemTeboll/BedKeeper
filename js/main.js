@@ -1,5 +1,5 @@
 class holyDay {
-    constructor(date, name, status) {
+    constructor(date, name) {
         this.date = date;
         this.name = name;
     }
