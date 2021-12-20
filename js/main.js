@@ -8,10 +8,9 @@ class holyDay {
 
 const inputDate = document.querySelector("input[type = 'date']");
 
-
 inputDate.addEventListener("input", () => {
 
-    fetch("https://calendrier.api.gouv.fr/jours-feries/metropole/2022.json")
+    fetch("https://calendrier.api.gouv.fr/jours-feries/metropole/2021.json")
         .then(response => response.json())
         .then((data) => {
             const array = Object.entries(data);
@@ -21,18 +20,11 @@ inputDate.addEventListener("input", () => {
                 console.log(obj.date);
                 
                 let responseText = document.querySelector('p#response');
-                let aside = document.querySelector('aside');
-                aside.classList.replace("empty-response-text", "filled-response-text");
 
-                console.log(inputDate.value);
-
-                if (inputDate.value === obj.date) {
-                    console.log("Test réussi");
-                    return responseText.innerText() = `Le ${inputDate.value} est un jour férié. Ce jour-là, l'événement est : ${obj.name}. Vous pourrez vous reposer !`;
-                } else {
-                    console.log("2e test réussi");
-                    responseText.innerText() = `Le ${inputDate.value} n’est pas férié. Désolé !`;
-                }
+                inputDate.value === obj.date ? 
+                    responseText.innerText = `Le ${inputDate.value} est un jour férié. Ce jour-là, l'événement est : ${obj.name}. Vous pourrez vous reposer !`
+                    :
+                    responseText.innerText = `Le ${inputDate.value} n’est pas férié. Désolé !`;
             })
             
         })
