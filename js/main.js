@@ -2,7 +2,6 @@ class holyDay {
     constructor(date, name, status) {
         this.date = date;
         this.name = name;
-        this.status = status;
     }
 }
 
@@ -18,7 +17,7 @@ inputDate.addEventListener("input", () => {
             const array = Object.entries(data);
 
             array.map((item) => {
-                const obj = new holyDay(item[0], item[1], true);
+                const obj = new holyDay(item[0], item[1]);
                 
                 let aside = document.querySelector("aside");
                 aside.classList.replace("empty-response-text", "filled-response-text");
