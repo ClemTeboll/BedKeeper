@@ -8,7 +8,8 @@
 
 @mixin section-and-aside {
     width: 50%;
-    color: v.$second-color;
+    // color: v.$second-color;
+    z-index: 1;
     padding: 2%;
     font-family: 'Open Sans', sans-serif;
 }

@@ -1,0 +1,19 @@
+@use '../Utils/variables' as v;
+@use '../Utils/mixins' as m;
+
+aside {
+    &.empty-response-text {
+        @include m.section-and-aside;
+    }
+    &.filled-response-text {
+        @include m.section-and-aside;
+        background-color: v.$second-color!important;
+        color: v.$black-color!important;
+    }
+    @include m.mobile-only {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 70%;
+    }
+    
+}
