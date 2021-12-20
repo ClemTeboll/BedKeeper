@@ -2,10 +2,17 @@
 @use '../Utils/mixins' as m;
 
 aside {
-    &.response-text {
+    &.empty-response-text {
         @include m.section-and-aside;
         background-color: v.$second-color!important;
         color: v.$black-color!important;
+        visibility: hidden;
+    }
+    &.filled-response-text {
+        @include m.section-and-aside;
+        background-color: v.$second-color!important;
+        color: v.$black-color!important;
+        visibility: visible;
     }
     @include m.mobile-only {
         margin-top: 20px;

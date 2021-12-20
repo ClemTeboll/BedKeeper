@@ -8,6 +8,8 @@ class holyDay {
 
 const inputDate = document.querySelector("input[type = 'date']");
 
+
+
 inputDate.addEventListener("input", () => {
 
     fetch("https://calendrier.api.gouv.fr/jours-feries/metropole/2021.json")
@@ -19,6 +21,9 @@ inputDate.addEventListener("input", () => {
                 const obj = new holyDay(item[0], item[1], true);
                 console.log(obj.date);
                 
+                let aside = document.querySelector("aside");
+                aside.classList.replace("empty-response-text", "filled-response-text");
+
                 let responseText = document.querySelector('p#response');
 
                 inputDate.value === obj.date ? 
