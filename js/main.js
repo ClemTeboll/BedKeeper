@@ -5,36 +5,42 @@ class holyDay {
     }
 }
 
-const inputDate = document.querySelector("input[type = 'date']");
-console.log(inputDate);
+let inputValue;
+const inputOneDate = document.querySelector("#calendar-input-1");
+const inputTwoDate = document.querySelector("#calendar-input-2");
 
+console.log(typeof inputOneDate.value);
 
-inputDate.addEventListener("input", () => {
+// Exercice 1 : fetch avec les données de l'année saisie par le user
 
-    // Extraire l'année de la string de l'année saisir par le user
-    // Mettre la date dans le inputDate ci-dessous
+inputOneDate.addEventListener("input", () => {
 
-    fetch(`https://calendrier.api.gouv.fr/jours-feries/metropole/${inputDate}.json`)
+    const regex = new RegExp(/\b\w{4}\b/);
+    const yearDate = regex.exec(inputOneDate.value);
+
+    console.log(`https://calendrier.api.gouv.fr/jours-feries/metropole/${yearDate[0]}.json`);
+
+    fetch(`https://calendrier.api.gouv.fr/jours-feries/metropole/${yearDate[0]}.json`)
         .then(response => response.json())
         .then((data) => {
 
-            console.log(data);
-
             const array = Object.entries(data);
-            console.log(array);
 
-            data.map((item) => {
+            array.map((item) => {
                 const obj = new holyDay(item[0], item[1]);
-                console.log(obj);
+
                 let aside = document.querySelector("aside");
                 aside.classList.replace("empty-response-text", "filled-response-text");
 
                 let responseText = document.querySelector('p#response');
 
-                inputDate.value === obj.date ? 
-                    responseText.innerText = `Le ${inputDate.value} est un jour férié. Ce jour-là, l'événement est : ${obj.name}. Vous pourrez vous reposer !`
+                console.log(inputOneDate.value);
+                console.log(obj.date);
+
+                inputOneDate.value === obj.date ? 
+                    responseText.innerText = `Le ${inputOneDate.value} est un jour férié. Ce jour-là, l'événement est : ${obj.name}. Vous pourrez vous reposer !`
                     :
-                    responseText.innerText = `Le ${inputDate.value} n’est pas férié. Désolé !`;
+                    responseText.innerText = `Le ${inputOneDate.value} n’est pas férié. Désolé !`;
             })
             
         })
@@ -42,3 +48,8 @@ inputDate.addEventListener("input", () => {
 
 })
 
+// Exercice 2 : fetch avec toutes les données, 20 ans en arrière et 5 ans après
+
+inputTwoDate.addEventListener("input", () => {
+
+})
