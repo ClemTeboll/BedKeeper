@@ -6,19 +6,26 @@ class holyDay {
 }
 
 const inputDate = document.querySelector("input[type = 'date']");
-
+console.log(inputDate);
 
 
 inputDate.addEventListener("input", () => {
 
-    fetch("https://calendrier.api.gouv.fr/jours-feries/metropole/2021.json")
+    // Extraire l'année de la string de l'année saisir par le user
+    // Mettre la date dans le inputDate ci-dessous
+
+    fetch(`https://calendrier.api.gouv.fr/jours-feries/metropole/${inputDate}.json`)
         .then(response => response.json())
         .then((data) => {
-            const array = Object.entries(data);
 
-            array.map((item) => {
+            console.log(data);
+
+            const array = Object.entries(data);
+            console.log(array);
+
+            data.map((item) => {
                 const obj = new holyDay(item[0], item[1]);
-                
+                console.log(obj);
                 let aside = document.querySelector("aside");
                 aside.classList.replace("empty-response-text", "filled-response-text");
 

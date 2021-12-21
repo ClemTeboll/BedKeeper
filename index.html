@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/prefixed/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
@@ -25,6 +25,10 @@
         <section>
             <h2>Quel jour voulez-vous vérifier ?</h2>
             <form method="post" action="./js/main.js">
+                <div class="datetime-picker">
+                    <input type="date" name="calendar" placeholder="JJ/MM/AAAA" id="calendar-input" class="datetime-picker__input">
+                    <i class="far fa-calendar"></i>
+                </div>
                 <div class="datetime-picker">
                     <input type="date" name="calendar" placeholder="JJ/MM/AAAA" id="calendar-input" class="datetime-picker__input">
                     <i class="far fa-calendar"></i>
